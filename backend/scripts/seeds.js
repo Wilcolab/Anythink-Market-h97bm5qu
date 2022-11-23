@@ -57,9 +57,12 @@ const seedTestData = async () => {
   await User.deleteMany({});
   await Item.deleteMany({});
   await Comment.deleteMany({});
-  await User.insertMany(hundredUsers);
-  await Item.insertMany(hundredItems);
-  await Comment.insertMany(hundredComments);
+  await User.insertOne(testUser);
+  await Item.insertOne(testItem);
+  await Comment.insertOne(testComment);
+  // await User.insertMany(hundredUsers);
+  // await Item.insertMany(hundredItems);
+  // await Comment.insertMany(hundredComments);
   console.log("Database seeded");
   mongoose.connection.close();
 };
